@@ -12,8 +12,7 @@ namespace RegexPractice
     {
         public bool CheckPinCode(string pin)
         {
-            //Use Case 1
-            string pattern = @"[1-9][0-9]{2}\s{0,1}[0-9]{3}$";
+            string pattern = @"[1-9]([0-9]){5}$";
             return Regex.IsMatch(pin, pattern);
         }
     }
@@ -22,8 +21,7 @@ namespace RegexPractice
     {
         public bool CheckEmail(string mail)
         {
-            //Use Case 1
-            string pattern = @"^[a-zA-Z0-9]+[a-zA-Z0-9_\+-\.]*@[a-z]+\.[a-z]{2,4}$";
+            string pattern = @"^[a-zA-Z0-9]+([a-zA-Z0-9]+[_\+-\.]{0,1})*@[a-z]+\.[a-z]{2,4}$";
             return Regex.IsMatch(mail, pattern); 
         } 
     }
