@@ -21,9 +21,9 @@ namespace RegexPractice
     class Email
     {
         public bool CheckEmail(string mail)
-        { 
+        {
             //Use Case 1
-            string pattern = @"^[a-zA-Z]$"; 
+            string pattern = @"^[a-zA-Z0-9]+@[a-zA-Z]+$";
             return Regex.IsMatch(mail, pattern); 
         } 
     }
