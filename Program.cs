@@ -13,7 +13,7 @@ namespace RegexPractice
         public bool CheckPinCode(string pin)
         {
             //Use Case 1
-            string pattern = "[0-9]{6}";
+            string pattern = @"[1-9][0-9]{2}\s{0,1}[0-9]{3}";
             return Regex.IsMatch(pin, pattern);
         }
     }
