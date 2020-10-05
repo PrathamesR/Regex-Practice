@@ -23,7 +23,7 @@ namespace RegexPractice
         public bool CheckEmail(string mail)
         {
             //Use Case 1
-            string pattern = @"^[a-zA-Z0-9]+@[a-zA-Z]+$";
+            string pattern = @"^[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,4}$";
             return Regex.IsMatch(mail, pattern); 
         } 
     }
