@@ -13,9 +13,19 @@ namespace RegexPractice
         public bool CheckPinCode(string pin)
         {
             //Use Case 1
-            string pattern = @"[1-9][0-9]{2}\s{0,1}[0-9]{3}";
+            string pattern = @"[1-9][0-9]{2}\s{0,1}[0-9]{3}$";
             return Regex.IsMatch(pin, pattern);
         }
+    }
+
+    class Email
+    {
+        public bool CheckEmail(string mail)
+        { 
+            //Use Case 1
+            string pattern = @"^[a-zA-Z]$"; 
+            return Regex.IsMatch(mail, pattern); 
+        } 
     }
 
     class Program
@@ -23,7 +33,7 @@ namespace RegexPractice
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Regex Practice Problem");
-            Console.Write("Enter Pin Code:");
+            Console.Write("Enter Pin Code: ");
             PinCode pinMatch = new PinCode();
 
             if (pinMatch.CheckPinCode(Console.ReadLine()))
@@ -31,6 +41,12 @@ namespace RegexPractice
             else
                 Console.WriteLine("Pin Code is Invalid");
 
+            Console.Write("Enter Email Address: ");
+            Email mailMatch = new Email();
+            if (mailMatch.CheckEmail(Console.ReadLine()))
+                Console.WriteLine("Mail is Valid");
+            else
+                Console.WriteLine("Mail is Invalid");
 
             //Temp Read Line to view Console
             Console.ReadLine();
